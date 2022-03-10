@@ -6,15 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 var  CorsOrigins = "_CorsOrigins";
 builder.Services.AddCors(options => {
-   options.AddPolicy(name: CorsOrigins,
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:3000",
-                                        "")
-                                .AllowAnyHeader()
-                                .AllowAnyMethod()
-                                .AllowCredentials();
-                    });
+   options.AddPolicy(name: CorsOrigins, builder =>
+        {
+            builder.WithOrigins("http://localhost:3000",
+                            "")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+        });
 });
 
 // Database Connection Configuration

@@ -1,7 +1,7 @@
 
+using Microsoft.AspNetCore.Mvc;
 using StoreTextAPI.Models;
 using StoreTextAPI.Services;
-using Microsoft.AspNetCore.Mvc;
 
 namespace StoreTextAPI.Controllers;
 

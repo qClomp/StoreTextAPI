@@ -9,8 +9,7 @@ public class STextService
 {
     private readonly IMongoCollection<SText> _storetextCollection;
 
-    public STextService( 
-        IOptions<DatabaseSettings> DatabaseSettings)
+    public STextService(IOptions<DatabaseSettings> DatabaseSettings)
     {
         var mongoClient = new MongoClient( 
             DatabaseSettings.Value.ConnectionString);
@@ -26,7 +25,6 @@ public class STextService
         await _storetextCollection.Find(_ => true).ToListAsync();
     public async Task<SText?> GetAsync(string url) =>
         await _storetextCollection.Find(data => data.url == url).FirstOrDefaultAsync();
-
     public async Task CreateAsync(SText newSText) =>
         await _storetextCollection.InsertOneAsync(newSText);
 }
